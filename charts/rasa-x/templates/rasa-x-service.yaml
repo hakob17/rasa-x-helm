@@ -5,7 +5,7 @@ metadata:
   labels:
     {{ include "rasa-x.labels" . | nindent 4 }}
     app.kubernetes.io/component: rasa-x
-{{- with .Values.rasax.service and .Values.rasax.service.annotations }}
+{{- with .Values.rasax.service & .Values.rasax.service.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
 {{- end }}
